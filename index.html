@@ -20,259 +20,93 @@
 
     <!-- iOS app icons -->
     <link rel="apple-touch-icon" sizes="180x180"
-        href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiByeD0iMjQiIGZpbGw9IiNGRkMwQ0IiLz4KPHN2ZyB4PSI0NSIgeT0iNDUiIHdpZHRoPSI5MCIgaGVpZ2h0PSI5MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIj4KPHBhdGggZD0iTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Ii8+Cjwvc3ZnPgo8L3N2Zz4=">
-    <link rel="apple-touch-icon" sizes="152x152"
-        href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUyIiBoZWlnaHQ9IjE1MiIgdmlld0JveD0iMCAwIDE1MiAxNTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxNTIiIGhlaWdodD0iMTUyIiByeD0iMjQiIGZpbGw9IiNGRkMwQ0IiLz4KPHN2ZyB4PSIzOCIgeT0iMzgiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIj4KPHBhdGggZD0iTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Ii8+Cjwvc3ZnPgo8L3N2Zz4=">
-    <link rel="apple-touch-icon" sizes="120x120"
-        href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiByeD0iMjAiIGZpbGw9IiNGRkMwQ0IiLz4KPHN2ZyB4PSIzMCIgeT0iMzAiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIj4KPHBhdGggZD0iTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Ii8+Cjwvc3ZnPgo8L3N2Zz4=">
-    <link rel="apple-touch-icon" sizes="76x76"
-        href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzYiIGhlaWdodD0iNzYiIHZpZXdCb3g9IjAgMCA3NiA3NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijc2IiBoZWlnaHQ9Ijc2IiByeD0iMTIiIGZpbGw9IiNGRkMwQ0IiLz4KPHN2ZyB4PSIxOSIgeT0iMTkiIHdpZHRoPSIzOCIgaGVpZ2h0PSIzOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIj4KPHBhdGggZD0iTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Ii8+Cjwvc3ZnPgo8L3N2Zz4=">
-    <link rel="apple-touch-icon" sizes="60x60"
-        href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMTAiIGZpbGw9IiNGRkMwQ0IiLz4KPHN2ZyB4PSIxNSIgeT0iMTUiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIj4KPHBhdGggZD0iTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Ii8+Cjwvc3ZnPgo8L3N2Zz4=">
+        href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiByeD0iMjQiIGZpbGw9IiNGRkMwQ0IiLz4KPHN2ZyB4PSI0NSIgeT0iNDUiIHdpZHRoPSI5MCIgaGVpZ2h0PSI5MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIj4KPHBhdGggZD0iTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS44IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Ii8+Cjwvc3ZnPgo8L3N2Zz4=">
 
-    <!-- Tailwind CSS CDN for easy styling -->
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Tailwind CSS for utility classes -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom styles for the card flip effect */
-        .flip-card {
-            background-color: transparent;
-            width: 100%;
-            height: 250px;
-            /* Fixed height for the card */
-            perspective: 1000px;
-            /* 3D effect */
-            cursor: pointer;
-            /* Indicate that the card is clickable */
-            transition: transform 0.2s ease;
-        }
 
-        .flip-card:hover {
-            transform: scale(1.02);
-        }
-
-        .flip-card:active {
-            transform: scale(0.98);
-        }
-
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            border-radius: 1rem;
-            /* Rounded corners */
-        }
-
-        .flip-card.flipped .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .flip-card-front,
-        .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            /* Hide the back of the card during flip */
-            backface-visibility: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            /* Rounded corners */
-        }
-
-        .flip-card-front {
-            background-color: #f0f9ff;
-            /* Light blue background */
-            color: #1a202c;
-            /* Dark text */
-        }
-
-        .flip-card-back {
-            background-color: #bfdbfe;
-            /* Medium blue background */
-            color: #1a202c;
-            /* Dark text */
-            transform: rotateY(180deg);
-        }
-
-        /* Ensure text inside card is centered and readable */
-        .card-text {
-            font-size: 1.5rem;
-            /* Larger font for readability */
-            font-weight: bold;
-            text-align: center;
-            color: #1a202c;
-        }
-
-        .card-example {
-            font-size: 1rem;
-            margin-top: 0.5rem;
-            font-style: italic;
-            color: #4a5568;
-        }
-
-        /* Responsive button styling */
-        .btn {
-            @apply p-4 rounded-full shadow-lg font-semibold text-white transition duration-300 ease-in-out transform hover:scale-110 flex items-center justify-center;
-            min-width: 56px;
-            min-height: 56px;
-        }
-
-        .btn-blue {
-            @apply bg-blue-600 hover:bg-blue-700;
-        }
-
-        .btn-green {
-            @apply bg-green-600 hover:bg-green-700;
-        }
-
-        .btn-gray {
-            @apply bg-gray-400 hover:bg-gray-500;
-        }
-
-        /* SVG icon styling */
-        .arrow-icon {
-            width: 24px;
-            height: 24px;
-            fill: currentColor;
-            /* Inherit color from parent button */
-        }
-
-        /* Language slider styling */
-        .language-slider {
-            position: relative;
-            display: flex;
-            background-color: #f1f5f9;
-            border-radius: 12px;
-            padding: 3px;
-            border: 2px solid #e2e8f0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 100px;
-            height: 44px;
-            flex-shrink: 0;
-        }
-
-        .slider-indicator {
-            position: absolute;
-            top: 3px;
-            width: 44px;
-            height: 34px;
-            background-color: #3b82f6;
-            border-radius: 9px;
-            transition: transform 0.3s ease-in-out;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .slider-indicator.us-active {
-            transform: translateX(47px);
-        }
-
-        .slider-indicator.lt-active {
-            transform: translateX(0px);
-        }
-
-        .lang-option {
-            position: relative;
-            z-index: 10;
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-            border-radius: 9px;
-        }
-
-        .lang-option.active {
-            color: white;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        .lang-option:not(.active) {
-            color: #64748b;
-        }
-
-        .lang-option:hover:not(.active) {
-            color: #334155;
-            transform: scale(1.05);
-        }
-
-        /* Disable scrolling */
-        html,
-        body {
-            overflow: hidden;
-            height: 100%;
-            position: fixed;
-            width: 100%;
-        }
-    </style>
 </head>
 
-<body class="min-h-screen flex flex-col items-center justify-center p-4 font-sans"
+<body class="min-h-screen flex flex-col items-center justify-center p-4 pb-20 font-sans"
     style="background-color: #FFC0CB; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E&quot;); background-repeat: repeat; background-size: 40px 40px;">
 
-    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl p-6 space-y-6 md:p-8">
-        <!-- Header with title -->
-        <div class="text-center mb-6">
-            <h1 id="main-heading" class="text-2xl md:text-3xl font-extrabold text-gray-800">Anglų žodžiai Gretutei 💋
-            </h1>
-        </div>
+    <div id="app-container" class="max-w-md w-full bg-white rounded-2xl shadow-xl p-6 space-y-6 md:p-8 relative">
 
-        <!-- Simple instruction with visual cue -->
-        <div class="text-center text-gray-600 text-sm mb-6">
-            <p>Paspausk ant kortelės, kad pamatytum atsakymą</p>
-        </div>
-
-        <!-- Language slider centered above flashcard -->
-        <div class="flex justify-center mb-4">
-            <div id="language-slider" class="language-slider">
-                <div id="slider-indicator" class="slider-indicator us-active"></div>
-                <span id="lang-lt" class="lang-option" data-lang="lt">🇱🇹</span>
-                <span id="lang-us" class="lang-option active" data-lang="us">🇺🇸</span>
+        <!-- Group Selection Screen -->
+        <div id="group-selection-screen">
+            <div class="text-center mb-6">
+                <h1 id="main-heading" class="text-xl md:text-2xl font-bold text-gray-800">Anglų žodžiai Gretutei
+                    💋🤍
+                </h1>
             </div>
+            <p class="text-center text-gray-600 text-sm -mt-4 mb-6">Pasirinkite žodžių grupę</p>
+            <div id="group-list" class="space-y-4"></div>
         </div>
 
-        <!-- Card navigation and display area -->
-        <div class="flex items-center justify-center space-x-2 md:space-x-4 mb-6">
-            <!-- Previous Button (Arrow Left) -->
-            <button id="prev-button" class="btn btn-gray">
-                <svg class="arrow-icon" viewBox="0 0 24 24">
-                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-                </svg>
-            </button>
+        <!-- Flashcard Screen (hidden by default) -->
+        <div id="flashcard-screen" class="hidden">
+            <!-- Header with back button and title -->
+            <div class="flex items-center justify-between mb-6">
+                <button id="back-to-groups-btn" class="btn btn-gray">
+                    <svg class="arrow-icon" viewBox="0 0 24 24">
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+                    </svg>
+                </button>
+                <h1 id="group-title" class="text-xl md:text-2xl font-bold text-gray-800">Grupės pavadinimas</h1>
+                <div class="w-14"></div> <!-- Spacer -->
+            </div>
+            <p id="tutorial" class="text-center text-gray-600 text-sm -mt-4 mb-6 hidden">Paspausk, kad apverstum kortelę
+            </p>
 
-            <!-- Card display area -->
-            <div id="flashcard-container" class="flip-card flex-grow max-w-[calc(100%-100px)]">
-                <div class="flip-card-inner" id="card-inner">
-                    <div class="flip-card-front">
-                        <p id="card-front" class="card-text">Loading...</p>
-                    </div>
-                    <div class="flip-card-back">
-                        <p id="card-back" class="card-text"></p>
-                        <p id="card-example" class="card-example"></p>
-                    </div>
+            <!-- Language slider centered above flashcard -->
+            <div class="flex justify-center mb-4">
+                <div id="language-slider" class="language-slider">
+                    <div id="slider-indicator" class="slider-indicator us-active"></div>
+                    <span id="lang-lt" class="lang-option" data-lang="lt">🇱🇹</span>
+                    <span id="lang-us" class="lang-option active" data-lang="us">🇺🇸</span>
                 </div>
             </div>
 
-            <!-- Next Button (Arrow Right) -->
-            <button id="next-button" class="btn btn-green">
-                <svg class="arrow-icon" viewBox="0 0 24 24">
-                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
-                </svg>
-            </button>
-        </div>
+            <!-- Card navigation and display area -->
+            <div class="flex items-center justify-center space-x-2 md:space-x-4 mb-6">
+                <!-- Previous Button (Arrow Left) -->
+                <button id="prev-button" class="btn btn-gray">
+                    <svg class="arrow-icon" viewBox="0 0 24 24">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                    </svg>
+                </button>
 
-        <!-- Card counter with better positioning -->
-        <div class="text-center text-gray-500 font-medium text-sm">
-            <span id="card-count">0/0</span>
+                <!-- Card display area -->
+                <div id="flashcard-container" class="flip-card flex-grow max-w-[calc(100%-100px)]">
+                    <div class="flip-card-inner" id="card-inner">
+                        <div class="flip-card-front">
+                            <p id="card-front" class="card-text">Loading...</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p id="card-back" class="card-text"></p>
+                            <p id="card-example" class="card-example"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Button (Arrow Right) -->
+                <button id="next-button" class="btn btn-green">
+                    <svg class="arrow-icon" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Card counter and 'I know this' button -->
+            <div class="text-center text-gray-500 font-medium text-sm mb-4">
+                <span id="card-count">0/0</span>
+            </div>
+            <div class="text-center">
+                <button id="know-it-btn" class="btn-know-it">Jau žinau šį žodį 👍</button>
+            </div>
         </div>
 
         <!-- Install button (hidden by default) -->
@@ -288,238 +122,46 @@
         </div>
     </div>
 
-    <script>
-        // Array to store flashcard data
-        const flashcards = [
-            // Group A: Legal & Conflict
-            { front: "Judge", back: "Teisėjas", example: "Teisėjas priėmė sprendimą.<br>(The judge made a decision.)" },
-            { front: "Charge (accuse)", back: "Apkaltinti", example: "Policija jį apkaltino vagyste.<br>(The police charged him with theft.)" },
-            { front: "Charge (for money)", back: "Apmokestinti", example: "Restoranas nori apmokestinti mus už duoną.<br>(The restaurant wants to charge us for bread.)" },
-            { front: "Accuse", back: "Kaltinti", example: "Negali manęs kaltinti dėl savo klaidų.<br>(You can't accuse me of your mistakes.)" },
-            { front: "Defend", back: "Ginti", example: "Advokatas gins savo klientą teisme.<br>(The lawyer will defend his client in court.)" },
-            { front: "Fight", back: "Kova  / Kovoti", example: "Tai buvo sunki kova.<br>(It was a tough fight.)" },
-            { front: "Steal", back: "Pavogti", example: "Kažkas bandė pavogti mano dviratį.<br>(Someone tried to steal my bike.)" },
-            { front: "Get back at me", back: "Man atkeršyti", example: "Jis nori man atkeršyti už tai, ką pasakiau.<br>(He wants to get back at me for what I said.)" },
-            { front: "Press (media)", back: "Spauda", example: "Apie šį įvykį rašė visa spauda.<br>(The entire press wrote about this event.)" },
-            // Group B: Opinions & Communication
-            { front: "For that matter", back: "Tiesą sakant", example: "Aš nemėgstu lietaus. Tiesą sakant, aš jo nekenčiu.<br>(I don't like rain. For that matter, I hate it.)" },
-            { front: "For instance", back: "Pavyzdžiui", example: "Yra daug gražių miestų, pavyzdžiui, Vilnius.<br>(There are many beautiful cities, for instance, Vilnius.)" },
-            { front: "Indeed", back: "Iš tiesų", example: "Šiandien iš tiesų karšta diena.<br>(Today is indeed a hot day.)" },
-            { front: "Obviously", back: "Akivaizdžiai", example: "Akivaizdžiai, jis nežinojo atsakymo.<br>(Obviously, he didn't know the answer.)" },
-            { front: "Honest", back: "Sąžiningas", example: "Būk sąžiningas su manimi.<br>(Be honest with me.)" },
-            { front: "Pretend", back: "Apsimesti", example: "Vaikai mėgsta apsimesti superherojais.<br>(Children like to pretend to be superheroes.)" },
-            { front: "Introduce", back: "Supažindinti", example: "Leiskite man jus supažindinti su savo kolega.<br>(Let me introduce you to my colleague.)" },
-            { front: "Approval", back: "Pritarimas", example: "Projektui reikia direktoriaus pritarimo.<br>(The project needs the director's approval.)" },
-            // Group C: Actions & States of Mind
-            { front: "Steer", back: "Nukreipti", example: "Jis bandė nukreipti pokalbį kita tema.<br>(He tried to steer the conversation to another topic.)" },
-            { front: "Involve", back: "Įtraukti", example: "Šis darbas įtrauks daug kelionių.<br>(This job will involve a lot of travel.)" },
-            { front: "Observe", back: "Stebėti", example: "Mokslininkai stebi paukščių elgesį.<br>(Scientists observe the behavior of birds.)" },
-            { front: "Assessment", back: "Vertinimas", example: "Metų pabaigoje bus darbuotojų vertinimas.<br>(There will be an employee assessment at the end of the year.)" },
-            { front: "Assignment", back: "Užduotis", example: "Mokytoja davė mums namų darbų užduotį.<br>(The teacher gave us a homework assignment.)" },
-            { front: "Distracted", back: "Išsiblaškęs", example: "Aš buvau per daug išsiblaškęs, kad susikaučiau.<br>(I was too distracted to concentrate.)" },
-            { front: "Mad (angry)", back: "Piktas", example: "Ji buvo labai pikta ant jo.<br>(She was very mad at him.)" },
-            { front: "Mad (crazy)", back: "Išprotėjęs", example: "Šis planas yra visiškai išprotėjęs!<br>(This plan is completely mad!)" },
-            { front: "Disappointed", back: "Nusivylęs", example: "Aš esu nusivylęs rezultatais.<br>(I am disappointed with the results.)" },
-            // Group D: General Concepts & Modifiers
-            { front: "Proper", back: "Tinkamas", example: "Dėvėkite tinkamus batus žygiui.<br>(Wear proper shoes for the hike.)" },
-            { front: "Relevant", back: "Aktualus / Susijęs", example: "Pateikite tik aktualią informaciją.<br>(Provide only relevant information.)" },
-            { front: "Trick", back: "Triukas", example: "Magas parodė nuostabų triuką.<br>(The magician showed an amazing trick.)" },
-            { front: "Favor", back: "Paslauga", example: "Ar galėtum padaryti man paslaugą?<br>(Could you do me a favor?)" },
-            { front: "Competitors", back: "Konkurentai", example: "Mūsų pagrindiniai konkurentai išleido naują produktą.<br>(Our main competitors released a new product.)" },
-            { front: "Stuff", back: "Daiktai/ Dalykai", example: "Padėk savo daiktus į spintą.<br>(Put your stuff in the closet.)" },
-            { front: "Anyway", back: "Vis tiek / Bet kokiu atveju", example: "Lyja, bet aš vis tiek eisiu pasivaikščioti.<br>(It's raining, but I will go for a walk anyway.)" }
-        ];
+    <!-- Bottom Navigation Bar -->
+    <div
+        class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-md bg-white border-t border-gray-200 px-4 py-2 z-20">
+        <div class="flex justify-center">
+            <button id="settings-btn"
+                class="flex flex-col items-center py-2 px-4 text-gray-600 hover:text-gray-800 transition-colors">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                    </path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span class="text-xs font-medium">Nustatymai</span>
+            </button>
+        </div>
+    </div>
 
-        let currentCardIndex = 0;
-        // 'us-front' means English word on front, Lithuanian on back
-        // 'lt-front' means Lithuanian word on front, English on back
-        let languageMode = 'us-front';
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2 class="text-xl font-bold mb-4">Nustatymai</h2>
+            <button id="view-known-btn" class="modal-button">Peržiūrėti išmoktus žodžius</button>
+            <button id="reset-known-btn" class="modal-button-danger">Atkurti išmoktus žodžius</button>
+            <button id="close-settings-btn" class="modal-close-btn">Uždaryti</button>
+        </div>
+    </div>
 
-        const cardContainer = document.getElementById('flashcard-container');
-        const cardInner = document.getElementById('card-inner');
-        const cardFront = document.getElementById('card-front');
-        const cardBack = document.getElementById('card-back');
-        const cardExample = document.getElementById('card-example');
-        const cardCount = document.getElementById('card-count');
-        const nextButton = document.getElementById('next-button');
-        const prevButton = document.getElementById('prev-button');
-        const langLtButton = document.getElementById('lang-lt');
-        const langUsButton = document.getElementById('lang-us');
-        const sliderIndicator = document.getElementById('slider-indicator');
-        const mainHeading = document.getElementById('main-heading');
-        const pageTitle = document.getElementById('page-title');
+    <!-- Known Words Modal -->
+    <div id="known-words-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2 class="text-xl font-bold mb-4">Išmokti žodžiai</h2>
+            <ul id="known-words-list" class="list-disc list-inside h-64 overflow-y-auto"></ul>
+            <button id="close-known-words-btn" class="modal-close-btn">Uždaryti</button>
+        </div>
+    </div>
 
+    <!-- Link to external JavaScript file -->
+    <script src="./script.js"></script>
 
-        /**
-         * Updates the display of the card based on the current language mode.
-         */
-        function displayCard() {
-            const card = flashcards[currentCardIndex];
-            if (languageMode === 'us-front') {
-                cardFront.textContent = card.front; // English on front
-                cardBack.innerHTML = card.back;     // Lithuanian on back
-            } else { // languageMode === 'lt-front'
-                cardFront.textContent = card.back;  // Lithuanian on front
-                cardBack.innerHTML = card.front;    // English on back
-            }
-            cardExample.innerHTML = card.example; // Example remains consistent
-            cardCount.textContent = `${currentCardIndex + 1}/${flashcards.length}`;
-            cardContainer.classList.remove('flipped'); // Reset flip state
-        }
-
-        /**
-         * Toggles the 'flipped' class on the card container to trigger the flip animation.
-         */
-        function flipCard() {
-            cardContainer.classList.toggle('flipped');
-        }
-
-        /**
-         * Moves to the next flashcard in the array.
-         * If it's the last card, it loops back to the beginning.
-         */
-        function nextCard() {
-            currentCardIndex = (currentCardIndex + 1) % flashcards.length;
-            displayCard();
-        }
-
-        /**
-         * Moves to the previous flashcard in the array.
-         * If it's the first card, it loops back to the end.
-         */
-        function prevCard() {
-            currentCardIndex = (currentCardIndex - 1 + flashcards.length) % flashcards.length;
-            displayCard();
-        }
-
-        /**
-         * Switches the language mode and updates the UI.
-         * @param {string} mode - 'us-front' or 'lt-front'
-         */
-        function switchLanguage(mode) {
-            languageMode = mode;
-            // Update active state of flag buttons
-            langUsButton.classList.remove('active');
-            langLtButton.classList.remove('active');
-
-            // Update slider indicator position
-            sliderIndicator.classList.remove('us-active', 'lt-active');
-
-            if (mode === 'us-front') {
-                langUsButton.classList.add('active');
-                sliderIndicator.classList.add('us-active');
-            } else {
-                langLtButton.classList.add('active');
-                sliderIndicator.classList.add('lt-active');
-            }
-            displayCard(); // Re-display current card with new language settings
-        }
-
-        // Event listeners for buttons
-        nextButton.addEventListener('click', nextCard);
-        prevButton.addEventListener('click', prevCard);
-        cardContainer.addEventListener('click', flipCard); // Card click to flip
-
-        // Event listeners for language switch buttons
-        langLtButton.addEventListener('click', () => switchLanguage('lt-front'));
-        langUsButton.addEventListener('click', () => switchLanguage('us-front'));
-
-        // Initial display of the first card when the page loads
-        document.addEventListener('DOMContentLoaded', displayCard);
-
-        // PWA Service Worker Registration
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                    .then((registration) => {
-                        console.log('SW registered: ', registration);
-                    })
-                    .catch((registrationError) => {
-                        console.log('SW registration failed: ', registrationError);
-                    });
-            });
-        }
-
-        // PWA Install Prompt Handling
-        let deferredPrompt;
-        const installButton = document.getElementById('install-button');
-        const installContainer = document.getElementById('install-container');
-
-        // Listen for the beforeinstallprompt event
-        window.addEventListener('beforeinstallprompt', (e) => {
-            console.log('beforeinstallprompt event fired');
-            // Prevent the mini-infobar from appearing on mobile
-            e.preventDefault();
-            // Store the event so it can be triggered later
-            deferredPrompt = e;
-            // Show the install button
-            installContainer.classList.remove('hidden');
-        });
-
-        // Handle install button click
-        installButton.addEventListener('click', async () => {
-            if (!deferredPrompt) {
-                console.log('No deferred prompt available');
-                return;
-            }
-
-            // Hide the install button
-            installContainer.classList.add('hidden');
-
-            // Show the install prompt
-            deferredPrompt.prompt();
-
-            // Wait for the user to respond to the prompt
-            const { outcome } = await deferredPrompt.userChoice;
-            console.log(`User response to the install prompt: ${outcome}`);
-
-            // Clear the deferredPrompt variable
-            deferredPrompt = null;
-        });
-
-        // Listen for the appinstalled event
-        window.addEventListener('appinstalled', (evt) => {
-            console.log('PWA was installed');
-            // Hide the install button if it's still visible
-            installContainer.classList.add('hidden');
-        });
-
-        // Check if app is already installed (for iOS)
-        if (window.matchMedia('(display-mode: standalone)').matches) {
-            console.log('PWA is running in standalone mode');
-            // Hide install button if already installed
-            installContainer.classList.add('hidden');
-        }
-
-        // iOS Safari detection and handling
-        function isIOS() {
-            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        }
-
-        function isInStandaloneMode() {
-            return ('standalone' in window.navigator) && (window.navigator.standalone);
-        }
-
-        if (isIOS() && !isInStandaloneMode()) {
-            // For iOS, show a custom install instruction
-            setTimeout(() => {
-                const isInstallSupported = 'beforeinstallprompt' in window;
-                if (!isInstallSupported) {
-                    // Show iOS install button with custom message
-                    installContainer.classList.remove('hidden');
-                    installButton.innerHTML = `
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                        </svg>
-                        Pridėti į pradžios ekraną
-                    `;
-                    installButton.addEventListener('click', () => {
-                        alert('Norėdami įdiegti šią programėlę:\n\n1. Paspaskite "Dalintis" mygtuką\n2. Paspaskite "Pridėti į pradžios ekraną"\n3. Paspaskite "Pridėti"');
-                    });
-                }
-            }, 2000);
-        }
-    </script>
 </body>
 
 </html>

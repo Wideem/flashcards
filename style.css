@@ -1,0 +1,301 @@
+/* Custom styles for the card flip effect */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.flip-card:hover {
+    transform: scale(1.02);
+}
+
+.flip-card:active {
+    transform: scale(0.98);
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+.flip-card-front {
+    background-color: #f0f9ff;
+    color: #1a202c;
+}
+
+.flip-card-back {
+    background-color: #bfdbfe;
+    color: #1a202c;
+    transform: rotateY(180deg);
+}
+
+.card-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #1a202c;
+}
+
+.card-example {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #4a5568;
+}
+
+.btn {
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-weight: 600;
+    color: #1f2937;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 56px;
+    min-height: 56px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.arrow-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.language-slider {
+    position: relative;
+    display: flex;
+    background-color: #f1f5f9;
+    border-radius: 12px;
+    padding: 3px;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 44px;
+    flex-shrink: 0;
+}
+
+.slider-indicator {
+    position: absolute;
+    top: 3px;
+    width: 44px;
+    height: 34px;
+    background-color: #3b82f6;
+    border-radius: 9px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider-indicator.us-active {
+    transform: translateX(47px);
+}
+
+.slider-indicator.lt-active {
+    transform: translateX(0px);
+}
+
+.lang-option {
+    position: relative;
+    z-index: 10;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 9px;
+}
+
+.lang-option.active {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.lang-option:not(.active) {
+    color: #64748b;
+}
+
+.lang-option:hover:not(.active) {
+    color: #334155;
+    transform: scale(1.05);
+}
+
+.group-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.group-button:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.group-emoji {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.group-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.btn-know-it {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #1f2937;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-know-it:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn-know-it:active {
+    transform: translateY(0);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #e5e7eb;
+    font-weight: 600;
+    color: #1f2937;
+    transition: background-color 0.2s;
+}
+
+.modal-button:hover {
+    background-color: #d1d5db;
+}
+
+.modal-button-danger {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #fee2e2;
+    font-weight: 600;
+    color: #b91c1c;
+    transition: background-color 0.2s;
+}
+
+.modal-button-danger:hover {
+    background-color: #fecaca;
+}
+
+.modal-close-btn {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: #9ca3af;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.modal-close-btn:hover {
+    background-color: #6b7280;
+}
+
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
