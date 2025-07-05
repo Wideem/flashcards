@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Anglų žodžiai Gretutei 💋🤍🤍🤍🤍</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the card flip effect */
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 250px;
+            /* Fixed height for the card */
+            perspective: 1000px;
+            /* 3D effect */
+            cursor: pointer;
+            /* Indicate that the card is clickable */
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 1rem;
+            /* Rounded corners */
+        }
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            /* Hide the back of the card during flip */
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            /* Rounded corners */
+        }
+
+        .flip-card-front {
+            background-color: #f0f9ff;
+            /* Light blue background */
+            color: #1a202c;
+            /* Dark text */
+        }
+
+        .flip-card-back {
+            background-color: #bfdbfe;
+            /* Medium blue background */
+            color: #1a202c;
+            /* Dark text */
+            transform: rotateY(180deg);
+        }
+
+        /* Ensure text inside card is centered and readable */
+        .card-text {
+            font-size: 1.5rem;
+            /* Larger font for readability */
+            font-weight: bold;
+            text-align: center;
+            color: #1a202c;
+        }
+
+        .card-example {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: #4a5568;
+        }
+
+        /* Responsive button styling */
+        .btn {
+            @apply p-3 rounded-full shadow-lg font-semibold text-white transition duration-300 ease-in-out transform hover:scale-110 flex items-center justify-center;
+        }
+
+        .btn-blue {
+            @apply bg-blue-600 hover:bg-blue-700;
+        }
+
+        .btn-green {
+            @apply bg-green-600 hover:bg-green-700;
+        }
+
+        .btn-gray {
+            @apply bg-gray-400 hover:bg-gray-500;
+        }
+
+        /* SVG icon styling */
+        .arrow-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            /* Inherit color from parent button */
+        }
+
+        /* Language switch styling */
+        .lang-switch-btn {
+            font-size: 3.5rem;
+            /* Made flags bigger */
+            @apply cursor-pointer p-2 rounded-lg transition duration-200 ease-in-out;
+        }
+
+        .lang-switch-btn.active {
+            @apply bg-blue-400 ring-4 ring-blue-600 ring-opacity-50 shadow-lg;
+            /* Enhanced active state */
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center p-4 font-sans"
+    style="background-color: #FFC0CB; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E&quot;); background-repeat: repeat; background-size: 50px 50px;">
+
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl p-6 space-y-6 md:p-8">
+        <h1 id="main-heading" class="text-3xl font-extrabold text-center text-gray-800 mb-2">Anglų žodžiai Gretutei 💋🤍
+        </h1>
+        <!-- Usage tutorial -->
+        <p class="text-center text-gray-600 text-sm mb-2">
+            Paspauskite ant kortelės, kad ją apverstumėte ir pamatytumėte atsakymą.<br>
+            Paspauskite šonines rodykles (kairę arba dešinę), kad pereitumėte prie kito arba ankstesnio žodžio.
+        </p>
+        <p class="text-center text-gray-600 text-sm mb-6">
+            Paspauskite ant vėliavos, kad pakeistumėte kortelės kalbą.
+        </p>
+
+        <!-- Language Switch moved here -->
+        <div class="flex justify-center space-x-4 mb-4">
+            <span id="lang-lt" class="lang-switch-btn" data-lang="lt">🇱🇹</span>
+            <span id="lang-us" class="lang-switch-btn active" data-lang="us">🇺🇸</span>
+        </div>
+
+        <!-- Card navigation and display area -->
+        <div class="flex items-center justify-center space-x-2 md:space-x-4 mb-6">
+            <!-- Previous Button (Arrow Left) -->
+            <button id="prev-button" class="btn btn-gray">
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                </svg>
+            </button>
+
+            <!-- Card display area -->
+            <div id="flashcard-container" class="flip-card flex-grow max-w-[calc(100%-100px)]">
+                <div class="flip-card-inner" id="card-inner">
+                    <div class="flip-card-front">
+                        <p id="card-front" class="card-text">Loading...</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p id="card-back" class="card-text"></p>
+                        <p id="card-example" class="card-example"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Button (Arrow Right) -->
+            <button id="next-button" class="btn btn-green">
+                <svg class="arrow-icon" viewBox="0 0 24 24">
+                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Card counter -->
+        <div class="text-center text-gray-600 font-medium mb-6">
+            <span id="card-count">0/0</span>
+        </div>
+
+        <!-- Flip button (can still be used, or rely on card click) -->
+        <div class="flex justify-center">
+            <button id="flip-button" class="btn btn-blue px-6 py-3">Flip Card</button>
+        </div>
+    </div>
+
+    <script>
+        // Array to store flashcard data
+        const flashcards = [
+            // Group A: Legal & Conflict
+            { front: "Judge", back: "Teisėjas", example: "Teisėjas priėmė sprendimą.<br>(The judge made a decision.)" },
+            { front: "Charge (accuse)", back: "Apkaltinti", example: "Policija jį apkaltino vagyste.<br>(The police charged him with theft.)" },
+            { front: "Charge (for money)", back: "Apmokestinti", example: "Restoranas nori apmokestinti mus už duoną.<br>(The restaurant wants to charge us for bread.)" },
+            { front: "Accuse", back: "Kaltinti", example: "Negali manęs kaltinti dėl savo klaidų.<br>(You can't accuse me of your mistakes.)" },
+            { front: "Defend", back: "Ginti", example: "Advokatas gins savo klientą teisme.<br>(The lawyer will defend his client in court.)" },
+            { front: "Fight", back: "Kova (noun) / Kovoti (verb)", example: "Tai buvo sunki kova.<br>(It was a tough fight.)" },
+            { front: "Steal", back: "Pavogti", example: "Kažkas bandė pavogti mano dviratį.<br>(Someone tried to steal my bike.)" },
+            { front: "Get back at me", back: "Man atkeršyti", example: "Jis nori man atkeršyti už tai, ką pasakiau.<br>(He wants to get back at me for what I said.)" },
+            { front: "Press (media)", back: "Spauda", example: "Apie šį įvykį rašė visa spauda.<br>(The entire press wrote about this event.)" },
+            // Group B: Opinions & Communication
+            { front: "For that matter", back: "Tiesą sakant", example: "Aš nemėgstu lietaus. Tiesą sakant, aš jo nekenčiu.<br>(I don't like rain. For that matter, I hate it.)" },
+            { front: "For instance", back: "Pavyzdžiui", example: "Yra daug gražių miestų, pavyzdžiui, Vilnius.<br>(There are many beautiful cities, for instance, Vilnius.)" },
+            { front: "Indeed", back: "Iš tiesų", example: "Šiandien iš tiesų karšta diena.<br>(Today is indeed a hot day.)" },
+            { front: "Obviously", back: "Akivaizdžiai", example: "Akivaizdžiai, jis nežinojo atsakymo.<br>(Obviously, he didn't know the answer.)" },
+            { front: "Honest", back: "Sąžiningas", example: "Būk sąžiningas su manimi.<br>(Be honest with me.)" },
+            { front: "Pretend", back: "Apsimesti", example: "Vaikai mėgsta apsimesti superherojais.<br>(Children like to pretend to be superheroes.)" },
+            { front: "Introduce", back: "Supažindinti", example: "Leiskite man jus supažindinti su savo kolega.<br>(Let me introduce you to my colleague.)" },
+            { front: "Approval", back: "Pritarimas", example: "Projektui reikia direktoriaus pritarimo.<br>(The project needs the director's approval.)" },
+            // Group C: Actions & States of Mind
+            { front: "Steer", back: "Nukreipti", example: "Jis bandė nukreipti pokalbį kita tema.<br>(He tried to steer the conversation to another topic.)" },
+            { front: "Involve", back: "Įtraukti", example: "Šis darbas įtrauks daug kelionių.<br>(This job will involve a lot of travel.)" },
+            { front: "Observe", back: "Stebėti", example: "Mokslininkai stebi paukščių elgesį.<br>(Scientists observe the behavior of birds.)" },
+            { front: "Assessment", back: "Vertinimas", example: "Metų pabaigoje bus darbuotojų vertinimas.<br>(There will be an employee assessment at the end of the year.)" },
+            { front: "Assignment", back: "Užduotis", example: "Mokytoja davė mums namų darbų užduotį.<br>(The teacher gave us a homework assignment.)" },
+            { front: "Distracted", back: "Išsiblaškęs", example: "Aš buvau per daug išsiblaškęs, kad susikaučiau.<br>(I was too distracted to concentrate.)" },
+            { front: "Mad (angry)", back: "Piktas", example: "Ji buvo labai pikta ant jo.<br>(She was very mad at him.)" },
+            { front: "Mad (crazy)", back: "Išprotėjęs", example: "Šis planas yra visiškai išprotėjęs!<br>(This plan is completely mad!)" },
+            { front: "Disappointed", back: "Nusivylęs", example: "Aš esu nusivylęs rezultatais.<br>(I am disappointed with the results.)" },
+            // Group D: General Concepts & Modifiers
+            { front: "Proper", back: "Tinkamas", example: "Dėvėkite tinkamus batus žygiui.<br>(Wear proper shoes for the hike.)" },
+            { front: "Relevant", back: "Aktualus / Susijęs", example: "Pateikite tik aktualią informaciją.<br>(Provide only relevant information.)" },
+            { front: "Trick", back: "Triukas", example: "Magas parodė nuostabų triuką.<br>(The magician showed an amazing trick.)" },
+            { front: "Favor", back: "Paslauga", example: "Ar galėtum padaryti man paslaugą?<br>(Could you do me a favor?)" },
+            { front: "Competitors", back: "Konkurentai", example: "Mūsų pagrindiniai konkurentai išleido naują produktą.<br>(Our main competitors released a new product.)" },
+            { front: "Stuff", back: "Daiktai (things) / Dalykai (matters)", example: "Padėk savo daiktus į spintą.<br>(Put your stuff in the closet.)" },
+            { front: "Anyway", back: "Vis tiek / Bet kokiu atveju", example: "Lyja, bet aš vis tiek eisiu pasivaikščioti.<br>(It's raining, but I will go for a walk anyway.)" }
+        ];
+
+        let currentCardIndex = 0;
+        // 'us-front' means English word on front, Lithuanian on back
+        // 'lt-front' means Lithuanian word on front, English on back
+        let languageMode = 'us-front';
+
+        const cardContainer = document.getElementById('flashcard-container');
+        const cardInner = document.getElementById('card-inner');
+        const cardFront = document.getElementById('card-front');
+        const cardBack = document.getElementById('card-back');
+        const cardExample = document.getElementById('card-example');
+        const cardCount = document.getElementById('card-count');
+        const flipButton = document.getElementById('flip-button');
+        const nextButton = document.getElementById('next-button');
+        const prevButton = document.getElementById('prev-button');
+        const langLtButton = document.getElementById('lang-lt');
+        const langUsButton = document.getElementById('lang-us');
+        const mainHeading = document.getElementById('main-heading');
+        const pageTitle = document.getElementById('page-title');
+
+
+        /**
+         * Updates the display of the card based on the current language mode.
+         */
+        function displayCard() {
+            const card = flashcards[currentCardIndex];
+            if (languageMode === 'us-front') {
+                cardFront.textContent = card.front; // English on front
+                cardBack.innerHTML = card.back;     // Lithuanian on back
+            } else { // languageMode === 'lt-front'
+                cardFront.textContent = card.back;  // Lithuanian on front
+                cardBack.innerHTML = card.front;    // English on back
+            }
+            cardExample.innerHTML = card.example; // Example remains consistent
+            cardCount.textContent = `${currentCardIndex + 1}/${flashcards.length}`;
+            cardContainer.classList.remove('flipped'); // Reset flip state
+        }
+
+        /**
+         * Toggles the 'flipped' class on the card container to trigger the flip animation.
+         */
+        function flipCard() {
+            cardContainer.classList.toggle('flipped');
+        }
+
+        /**
+         * Moves to the next flashcard in the array.
+         * If it's the last card, it loops back to the beginning.
+         */
+        function nextCard() {
+            currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+            displayCard();
+        }
+
+        /**
+         * Moves to the previous flashcard in the array.
+         * If it's the first card, it loops back to the end.
+         */
+        function prevCard() {
+            currentCardIndex = (currentCardIndex - 1 + flashcards.length) % flashcards.length;
+            displayCard();
+        }
+
+        /**
+         * Switches the language mode and updates the UI.
+         * @param {string} mode - 'us-front' or 'lt-front'
+         */
+        function switchLanguage(mode) {
+            languageMode = mode;
+            // Update active state of flag buttons
+            langUsButton.classList.remove('active');
+            langLtButton.classList.remove('active');
+            if (mode === 'us-front') {
+                langUsButton.classList.add('active');
+            } else {
+                langLtButton.classList.add('active');
+            }
+            displayCard(); // Re-display current card with new language settings
+        }
+
+        // Event listeners for buttons
+        flipButton.addEventListener('click', flipCard);
+        nextButton.addEventListener('click', nextCard);
+        prevButton.addEventListener('click', prevCard);
+        cardContainer.addEventListener('click', flipCard); // Card click to flip
+
+        // Event listeners for language switch buttons
+        langLtButton.addEventListener('click', () => switchLanguage('lt-front'));
+        langUsButton.addEventListener('click', () => switchLanguage('us-front'));
+
+        // Initial display of the first card when the page loads
+        document.addEventListener('DOMContentLoaded', displayCard);
+    </script>
+</body>
+
+</html>
