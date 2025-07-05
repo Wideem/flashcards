@@ -18,6 +18,15 @@
             /* 3D effect */
             cursor: pointer;
             /* Indicate that the card is clickable */
+            transition: transform 0.2s ease;
+        }
+
+        .flip-card:hover {
+            transform: scale(1.02);
+        }
+
+        .flip-card:active {
+            transform: scale(0.98);
         }
 
         .flip-card-inner {
@@ -109,16 +118,64 @@
             /* Inherit color from parent button */
         }
 
-        /* Language switch styling */
-        .lang-switch-btn {
-            font-size: 3.5rem;
-            /* Made flags bigger */
-            @apply cursor-pointer p-2 rounded-lg transition duration-200 ease-in-out;
+        /* Language slider styling */
+        .language-slider {
+            position: relative;
+            display: flex;
+            background-color: #f1f5f9;
+            border-radius: 12px;
+            padding: 3px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100px;
+            height: 44px;
+            flex-shrink: 0;
         }
 
-        .lang-switch-btn.active {
-            @apply bg-blue-400 ring-4 ring-blue-600 ring-opacity-50 shadow-lg;
-            /* Enhanced active state */
+        .slider-indicator {
+            position: absolute;
+            top: 3px;
+            width: 44px;
+            height: 34px;
+            background-color: #3b82f6;
+            border-radius: 9px;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider-indicator.us-active {
+            transform: translateX(47px);
+        }
+
+        .slider-indicator.lt-active {
+            transform: translateX(0px);
+        }
+
+        .lang-option {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            border-radius: 9px;
+        }
+
+        .lang-option.active {
+            color: white;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .lang-option:not(.active) {
+            color: #64748b;
+        }
+
+        .lang-option:hover:not(.active) {
+            color: #334155;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -127,21 +184,24 @@
     style="background-color: #FFC0CB; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E&quot;); background-repeat: repeat; background-size: 50px 50px;">
 
     <div class="max-w-md w-full bg-white rounded-2xl shadow-xl p-6 space-y-6 md:p-8">
-        <h1 id="main-heading" class="text-3xl font-extrabold text-center text-gray-800 mb-2">Anglų žodžiai Gretutei 💋🤍
-        </h1>
-        <!-- Usage tutorial -->
-        <p class="text-center text-gray-600 text-sm mb-2">
-            Paspauskite ant kortelės, kad ją apverstumėte ir pamatytumėte atsakymą.<br>
-            Paspauskite šonines rodykles (kairę arba dešinę), kad pereitumėte prie kito arba ankstesnio žodžio.
-        </p>
-        <p class="text-center text-gray-600 text-sm mb-6">
-            Paspauskite ant vėliavos, kad pakeistumėte kortelės kalbą.
-        </p>
+        <!-- Header with title -->
+        <div class="text-center mb-6">
+            <h1 id="main-heading" class="text-2xl md:text-3xl font-extrabold text-gray-800">Anglų žodžiai Gretutei 💋
+            </h1>
+        </div>
 
-        <!-- Language Switch moved here -->
-        <div class="flex justify-center space-x-4 mb-4">
-            <span id="lang-lt" class="lang-switch-btn" data-lang="lt">🇱🇹</span>
-            <span id="lang-us" class="lang-switch-btn active" data-lang="us">🇺🇸</span>
+        <!-- Simple instruction with visual cue -->
+        <div class="text-center text-gray-600 text-sm mb-6">
+            <p>Paspausk ant kortelės, kad pamatytum atsakymą</p>
+        </div>
+
+        <!-- Language slider centered above flashcard -->
+        <div class="flex justify-center mb-4">
+            <div id="language-slider" class="language-slider">
+                <div id="slider-indicator" class="slider-indicator us-active"></div>
+                <span id="lang-lt" class="lang-option" data-lang="lt">🇱🇹</span>
+                <span id="lang-us" class="lang-option active" data-lang="us">🇺🇸</span>
+            </div>
         </div>
 
         <!-- Card navigation and display area -->
@@ -174,14 +234,9 @@
             </button>
         </div>
 
-        <!-- Card counter -->
-        <div class="text-center text-gray-600 font-medium mb-6">
+        <!-- Card counter with better positioning -->
+        <div class="text-center text-gray-500 font-medium text-sm">
             <span id="card-count">0/0</span>
-        </div>
-
-        <!-- Flip button (can still be used, or rely on card click) -->
-        <div class="flex justify-center">
-            <button id="flip-button" class="btn btn-blue px-6 py-3">Flip Card</button>
         </div>
     </div>
 
@@ -194,7 +249,7 @@
             { front: "Charge (for money)", back: "Apmokestinti", example: "Restoranas nori apmokestinti mus už duoną.<br>(The restaurant wants to charge us for bread.)" },
             { front: "Accuse", back: "Kaltinti", example: "Negali manęs kaltinti dėl savo klaidų.<br>(You can't accuse me of your mistakes.)" },
             { front: "Defend", back: "Ginti", example: "Advokatas gins savo klientą teisme.<br>(The lawyer will defend his client in court.)" },
-            { front: "Fight", back: "Kova (noun) / Kovoti (verb)", example: "Tai buvo sunki kova.<br>(It was a tough fight.)" },
+            { front: "Fight", back: "Kova  / Kovoti", example: "Tai buvo sunki kova.<br>(It was a tough fight.)" },
             { front: "Steal", back: "Pavogti", example: "Kažkas bandė pavogti mano dviratį.<br>(Someone tried to steal my bike.)" },
             { front: "Get back at me", back: "Man atkeršyti", example: "Jis nori man atkeršyti už tai, ką pasakiau.<br>(He wants to get back at me for what I said.)" },
             { front: "Press (media)", back: "Spauda", example: "Apie šį įvykį rašė visa spauda.<br>(The entire press wrote about this event.)" },
@@ -223,7 +278,7 @@
             { front: "Trick", back: "Triukas", example: "Magas parodė nuostabų triuką.<br>(The magician showed an amazing trick.)" },
             { front: "Favor", back: "Paslauga", example: "Ar galėtum padaryti man paslaugą?<br>(Could you do me a favor?)" },
             { front: "Competitors", back: "Konkurentai", example: "Mūsų pagrindiniai konkurentai išleido naują produktą.<br>(Our main competitors released a new product.)" },
-            { front: "Stuff", back: "Daiktai (things) / Dalykai (matters)", example: "Padėk savo daiktus į spintą.<br>(Put your stuff in the closet.)" },
+            { front: "Stuff", back: "Daiktai/ Dalykai", example: "Padėk savo daiktus į spintą.<br>(Put your stuff in the closet.)" },
             { front: "Anyway", back: "Vis tiek / Bet kokiu atveju", example: "Lyja, bet aš vis tiek eisiu pasivaikščioti.<br>(It's raining, but I will go for a walk anyway.)" }
         ];
 
@@ -238,11 +293,11 @@
         const cardBack = document.getElementById('card-back');
         const cardExample = document.getElementById('card-example');
         const cardCount = document.getElementById('card-count');
-        const flipButton = document.getElementById('flip-button');
         const nextButton = document.getElementById('next-button');
         const prevButton = document.getElementById('prev-button');
         const langLtButton = document.getElementById('lang-lt');
         const langUsButton = document.getElementById('lang-us');
+        const sliderIndicator = document.getElementById('slider-indicator');
         const mainHeading = document.getElementById('main-heading');
         const pageTitle = document.getElementById('page-title');
 
@@ -298,16 +353,21 @@
             // Update active state of flag buttons
             langUsButton.classList.remove('active');
             langLtButton.classList.remove('active');
+
+            // Update slider indicator position
+            sliderIndicator.classList.remove('us-active', 'lt-active');
+
             if (mode === 'us-front') {
                 langUsButton.classList.add('active');
+                sliderIndicator.classList.add('us-active');
             } else {
                 langLtButton.classList.add('active');
+                sliderIndicator.classList.add('lt-active');
             }
             displayCard(); // Re-display current card with new language settings
         }
 
         // Event listeners for buttons
-        flipButton.addEventListener('click', flipCard);
         nextButton.addEventListener('click', nextCard);
         prevButton.addEventListener('click', prevCard);
         cardContainer.addEventListener('click', flipCard); // Card click to flip
