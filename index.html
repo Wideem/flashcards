@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title id="page-title">Anglų žodžiai Gretutei 💋🤍🤍🤍🤍</title>
 
     <!-- PWA Manifest -->
@@ -119,7 +120,9 @@
 
         /* Responsive button styling */
         .btn {
-            @apply p-3 rounded-full shadow-lg font-semibold text-white transition duration-300 ease-in-out transform hover:scale-110 flex items-center justify-center;
+            @apply p-4 rounded-full shadow-lg font-semibold text-white transition duration-300 ease-in-out transform hover:scale-110 flex items-center justify-center;
+            min-width: 56px;
+            min-height: 56px;
         }
 
         .btn-blue {
